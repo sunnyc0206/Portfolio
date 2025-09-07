@@ -1378,3 +1378,33 @@ p {
 html {
     scroll-padding-top: 80px;
 } 
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  color: inherit;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* LinkedIn blue bubble */
+.icon.linkedin {
+  background-color: #0077b5;
+}
+
+/* GitHub dark bubble */
+.icon.github {
+  background-color: #333;
+}
