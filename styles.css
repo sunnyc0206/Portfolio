@@ -209,6 +209,7 @@ p {
     display: flex;
     list-style: none;
     gap: var(--spacing-md);
+    transition: all var(--transition-normal);
 }
 
 .nav-menu a {
@@ -244,18 +245,68 @@ p {
     border-radius: 1px;
 }
 
+/* --- Mobile Navigation Icon Styles ---
+    The nav-toggle must be hidden on desktop and SHOWN on mobile.
+*/
 .nav-toggle {
-    display: none;
+    display: none; /* Default: Hide on large screens */
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 40px; 
+    height: 40px; 
     cursor: pointer;
+    box-sizing: border-box; 
+    padding: 8px;
+    z-index: 1002; 
 }
 
 .nav-toggle span {
-    width: 25px;
+    width: 100%;
     height: 3px;
     background-color: var(--text-primary);
-    margin: 3px 0;
-    transition: var(--transition-fast);
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-6px, -6px);
+}
+
+@media (max-width: 768px) {
+    
+    .nav-toggle {
+        display: flex; 
+    }
+
+    .nav-menu {
+        display: none; 
+        position: absolute;
+        flex-direction: column;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: black;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+
+    .nav-menu li {
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .nav-menu.active {
+        display: flex; 
+    }
 }
 
 /* Theme Toggle Button - Integrated in Navbar */
