@@ -250,11 +250,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (typedTextSpan && cursorSpan) {
         const textArray = [
-            "Full Stack Engineer", 
-            "Backend Developer", 
             "Cyber Security", 
-            "Java + SpringBoot",
-            "ReactJS Developer"
+            "Professional Services Engineer", 
+            "Full Stack Developer", 
+            "AppSec",
+            "DevSecOps"
         ];
         const typingDelay = 100;
         const erasingDelay = 50;
@@ -528,4 +528,5 @@ const additionalStyles = `
 // Inject additional styles
 const styleSheet = document.createElement('style');
 styleSheet.textContent = additionalStyles;
+
 document.head.appendChild(styleSheet); 
